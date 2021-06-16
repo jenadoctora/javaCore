@@ -1,4 +1,4 @@
-package Lection01;
+package javaCore.git.Lection01;
 
 public class man {
 
