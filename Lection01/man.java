@@ -11,6 +11,6 @@ public class man {
         this.maxRun = maxRun;
     }
 
-    public void jump() {System.out.println("Man jump");}
-    public void run() {System.out.println("Man run");}
+    public void jump(float maxJump) {System.out.println("Man jump");}
+    public void run(float maxRun) {System.out.println("Man run");}
 }

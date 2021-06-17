@@ -13,7 +13,17 @@ public class javaHW01 {
         wall wall = new wall(10);
         track track = new track(10);
 
+        Object[] objects = {cat, man, robot};
 
-        barrier[]  barrier = {wall, track};
+
+        barrier[] barrier = {wall, track};
+
+
+     for (int i = 0; i < barrier.length; i++)
+
+    { for (int j = 0; j < objects.length; i++){
+
+
+
     }
-}
+    }}}
