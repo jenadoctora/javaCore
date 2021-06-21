@@ -1,13 +1,17 @@
-package Lection01;
+package javaCore.git.Lection01;
+
 
 public class cat {
 
-    private String surname;
-    private String secondName;
-    private String name;
-    private String position;
-    private String phone;
-    private float salary;
-    boolean isSalaryChanged;
+    private float maxRun;
+    private float maxJump;
+
+    cat (float maxRun, float maxJump) {
+        this.maxJump = maxJump;
+        this.maxRun = maxRun;
+    }
+
+    public void jump() {System.out.println("Cat jump");}
+    public void run() {System.out.println("Cat run");}
 
 }
