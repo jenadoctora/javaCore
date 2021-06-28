@@ -11,7 +11,7 @@ public class Sorting {
         Box appleBox = new Box(0, 0);
         Box orangeBox = new Box(0, 0);
 
-        Fruit[] fruit = {orange, apple, apple, orange, apple, orange, apple, orange, apple, apple,};
+        Fruit[] fruit = {apple, apple, apple, orange, apple, orange, apple, orange, apple, apple,};
 
         for (int i = 0; i < fruit.length; i++) {
             if (fruit[i] == orange) {
@@ -26,6 +26,10 @@ public class Sorting {
         System.out.println(appleBox.quantity);
         System.out.println(orangeBox.weight);
         System.out.println(orangeBox.quantity);
+
+        appleBox.compare(orangeBox);
+        orangeBox.compare(appleBox);
+
 
 
     }
