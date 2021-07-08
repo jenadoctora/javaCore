@@ -1,28 +1,28 @@
 package javaCore.git.Lection06;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import java.io.*;
+import java.net.URL;
+import java.net.URLConnection;
 
-import java.io.IOException;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class Weather {
 
     public static void main(String[] args) throws IOException {
 
-        OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder()
-                .url("https://ru.wikipedia.org")
-                .build();
+        URL url = new URL("https", "yandex.ru", 443, "/pogoda/saint-petersburg");
+        InputStream in = url.openStream();
 
-        Response response = client.newCall(request).execute();
-        String body = response.body().string();
-        System.out.println(response.code());
-        System.out.println(response.headers());
-        System.out.println(response.isRedirect());
-        System.out.println(response.isSuccessful());
-        System.out.println(response.protocol());
-        System.out.println(response.receivedResponseAtMillis());
+        URLConnection urlConnection = url.openConnection();
+        in = urlConnection.getInputStream();
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in, UTF_8));
+        PrintWriter writer = new PrintWriter("weather.json");
+        String current = null;
+        while ((current = bufferedReader.readLine()) !=null) {
+            writer.println(current);
+        }
+        writer.close();
+        bufferedReader.close();
 
     }
 }
