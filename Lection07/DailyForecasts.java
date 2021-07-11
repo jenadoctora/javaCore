@@ -1,26 +1,27 @@
 package javaCore.git.Lection07;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.*;
 
 import java.io.File;
 import java.io.IOException;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@ToString
-public class WeatherResponse {
 
-    private static String Date;
-    private static int Temperature;
-    private static String IconPhrase;
-
-
+ public class DailyForecasts {
 
     public static void main(String[] args) throws IOException {
+
+
+
         ObjectMapper objectMapper = new ObjectMapper();
-        WeatherResponse[] weatherResponse = objectMapper.readValue(new File("weather.json"), WeatherResponse[].class);
+        JsonNode universityName = objectMapper
+                .readTree("weather.json")
+                .at("/Temperature/Minimum/Value");
+
+        System.out.println(universityName.asText());
+        DailyForecasts[] weatherResponse = objectMapper.readValue(new File("weather.json"), DailyForecasts[].class);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         System.out.println(weatherResponse[0]);
         System.out.println(weatherResponse[1] );
         System.out.println(weatherResponse[2] );
