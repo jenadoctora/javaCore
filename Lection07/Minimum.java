@@ -1,11 +1,13 @@
 package javaCore.git.Lection07;
 
+import java.util.ArrayList;
+
 public class Minimum {
         private float Value;
         private String Unit;
         private float UnitType;
 
-
+    ArrayList<Minimum> minimum = new ArrayList <> ();
         // Getter Methods
 
         public float getValue() {

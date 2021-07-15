@@ -1,11 +1,13 @@
 package javaCore.git.Lection07;
 
+import java.util.ArrayList;
+
 public class Day {
     private float Icon;
     private String IconPhrase;
     private boolean HasPrecipitation;
 
-
+    ArrayList<Day> day = new ArrayList <> ();
     // Getter Methods
 
     public float getIcon() {

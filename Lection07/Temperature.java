@@ -1,12 +1,14 @@
 package javaCore.git.Lection07;
 
 
+import java.util.ArrayList;
+
 public class Temperature {
 
 Minimum MinimumObject;
     Maximum MaximumObject;
 
-
+    ArrayList<Temperature> temperature = new ArrayList <> ();
     // Getter Methods
 
     public Minimum getMinimum() {

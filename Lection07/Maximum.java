@@ -1,5 +1,7 @@
 package javaCore.git.Lection07;
 
+import java.util.ArrayList;
+
 public class Maximum {
 
 
@@ -7,7 +9,7 @@ public class Maximum {
         private String Unit;
         private float UnitType;
 
-
+    ArrayList<Maximum> maximum = new ArrayList <> ();
         // Getter Methods
 
         public float getValue() {

@@ -1,5 +1,6 @@
 package javaCore.git.Lection07;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
@@ -7,10 +8,13 @@ import java.util.ArrayList;
 public class Codebeautify {
     @JsonProperty
         private String Date;
-    @JsonProperty
+    @JsonIgnore
         private float EpochDate;
+    @JsonIgnore
         Temperature TemperatureObject;
+
         Day DayObject;
+
         Night NightObject;
         ArrayList <Codebeautify> codebeautify = new ArrayList < Codebeautify > ();
         private String MobileLink;
